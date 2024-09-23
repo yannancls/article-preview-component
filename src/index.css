@@ -1,0 +1,213 @@
+/* Manrope */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  /* Colors */
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+  /* Font */
+  --font-size: 13px;
+  --font-family: "Manrope", sans-serif;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+  background-color: var(--Light-Grayish-Blue);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.10);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.drawer-pic {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 10px 0 0 10px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px;
+}
+
+.details, .author-info h4 {
+  font-weight: var(--font-weight-700);
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+.details {
+  font-size: 1.8rem;
+  line-height: 130%;
+}
+
+.additional-info, .author-info {
+  color: var(--Desaturated-Dark-Blue);
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.additional-info {
+  font-weight: var(--font-weight-500);
+  line-height: 170%;
+  letter-spacing: 1px;
+}
+
+.author-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.author-div {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.author-picture {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.share-div {
+  position: relative;
+}
+
+.share-icon {
+  width: 15px;
+  height: 15px;
+  padding: 8px;
+  border: none;
+  background-color: var(--Light-Grayish-Blue);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.share-icon:hover, .hovered, .path-fill, .share-icon:hover .svg-icon{
+  background-color: var(--Very-Dark-Grayish-Blue);
+  fill: white;
+}
+
+.share-active-div p {
+  font-size: 1.1rem;
+}
+
+.share-active-div {
+  position: absolute;
+  bottom: 50px;
+  right: -125px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--Grayish-Blue);
+  letter-spacing: 3px;
+  gap: 15px;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  border-radius: 10px;
+  width: 280px;
+  height: 58px;
+  box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.10);
+}
+
+.share-active-div::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+}
+
+.share-active-div.hidden {
+  display: none;
+}
+
+.share-active-div img {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.share-active-div img:hover {
+  filter: brightness(0.7);
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .drawer-pic {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+  }
+
+  .author-container {
+    margin-top: 20px;
+  }
+
+  .details-container {
+    margin-bottom: 20px;
+  }
+
+  .hovered, .path-fill, .share-icon:hover .svg-icon, .hovered {
+    background-color: var(--Desaturated-Dark-Blue);
+  }
+
+  .share-active-div {
+    border-radius: 0px 0px 10px 10px;
+    left: -30px;
+    right: -30px;
+    top: -20px;
+    height: 80px;
+    width: unset;
+    padding: 0 30px;
+    justify-content: flex-start;
+  }
+
+  .share-active-div::before {
+    display: none;
+  }
+}
